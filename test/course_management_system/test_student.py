@@ -1,5 +1,5 @@
 import unittest
-from src.course_management_system.Student import Student
+from src.course_management_system.student import Student
 
 
 class MyTestCase(unittest.TestCase):
