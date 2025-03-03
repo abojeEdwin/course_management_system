@@ -108,6 +108,9 @@ def view_courses():
     for courses in student_offered_courses:
         print(courses)
 
+def view_course_instructor():
+    pass
+
 
 class Student(User):
     def __init__(self, first_name, last_name, email, password):
