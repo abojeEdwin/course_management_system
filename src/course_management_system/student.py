@@ -1,7 +1,7 @@
 import re
 from os import write
 import bcrypt
-from src.course_management_system.user import User
+from courseManagementSystem.src.course_management_system.user import User
 
 USER_DETAILS = 'user_details.txt'
 
