@@ -1,4 +1,4 @@
-from student import Student
+from courseManagementSystem.src.course_management_system.student import Student
 
 class Course:
     def __init__(self):
@@ -39,5 +39,8 @@ class Course:
 
     def find_student_by_full_name(self, student_name):
         for student in self.students:
-            if student.get_full_name() == student_name:
+            if student.get_full_name() == student_name and student is not None:
                 return student
+
+    def add_student(self, student):
+        self.students.append(student)

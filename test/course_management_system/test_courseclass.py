@@ -1,6 +1,10 @@
+import unittest
 from unittest import TestCase
+
+
 from courseManagementSystem.src.course_management_system.course import Course
 from courseManagementSystem.src.course_management_system.student import Student
+
 class TestCourse(TestCase):
     def setUp(self):
         self.course = Course()
@@ -22,5 +26,7 @@ class TestCourse(TestCase):
         self.course.set_course_instructor("Miss Africa")
         self.course.set_course_name("Biology")
         student = Student("Divine", "Favour", "divfav@gmail.com", "12ABcd@*")
-        self.assertEqual("Divine", self.course.find_student_by_full_name("Divine Favour"))
+        self.course.add_student(student)
+        self.assertEqual(student, self.course.find_student_by_full_name("Divine Favour"))
+
 
