@@ -105,7 +105,9 @@ def register_course():
         break
 
 def view_courses():
-    pass
+    for courses in student_offered_courses:
+        print(courses)
+
 
 class Student(User):
     def __init__(self, first_name, last_name, email, password):
