@@ -9,11 +9,11 @@ class MyTestCase(unittest.TestCase):
         expected = "Edwin Aboje"
         self.assertEqual(actual, expected)
 
-    def test_that_student_email_and_password_can_save_to_file(self):
-        student = Student("Edwin","Aboje","abojeedwin@gmail.com","123456")
-        actual = student.save_to_file("abojeedwin@gmail.com","123456")
-        expected = "Edwin Aboje"
-        self.assertEqual(actual,expected)
+    def test_that_student_class_logins_in(self):
+        self.student = Student("Edwin","Aboje","abojeedwin@gmail.com","123456")
+        actual = self.student.register("Aboje Edwin","abojeedwin@gmail.com","12345")
+        expected = "Registration Successful"
+        self.assertEqual(actual, expected)
 
 
 
