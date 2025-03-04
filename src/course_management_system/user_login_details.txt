@@ -18,3 +18,6 @@ aboje@gmail.com:b'$2b$12$HcYiOJdIsIo6JP7IVZthwezDFYvNxKxWyTiSLONxbukF60cb/dx/W'
 aboje@gmail.com:Test123!
 aboje@gmail.com:$2b$12$MY3tdWYQrCUudBeRzqg53eQWSUviNJuejcVY4oupgviOnGvReruZe
 abojeedwin@gmail.com:$2b$12$Acg4jbvMoAx.frGcxQpxlusR0Lv2xuM9l0e7Cq7OnC7wv9LAox8qS
+ayomide@gmail.com:b'$2b$12$XPu8RH0JSl1.tDEdczDBfOi.o4dhTQaam5DL3vtvinSrzPlp4OnMS'
+ayomide@gmail.com:Test123!
+w@gmail.com:$2b$12$jT8JOMksWH0YACNtJQg0nuPVIursxCxtzopqgY4sCxqs7id6SBBzW

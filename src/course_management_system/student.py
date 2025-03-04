@@ -7,16 +7,20 @@ from src.course_management_system.course import Course
 
 class Student:
     def __init__(self):
-        self.__first_name = " "
-        self.__last_name = " "
-        self.__email = " "
-        self.__password = " "
+        self.__first_name = None
+        self.__last_name = None
+        self.__email = None
+        self.__password = None
         self.__student_offered_courses = []
         self.__courses = []
         self.__student_grades = {}
         self.USER_DETAILS = 'user_login_details.txt'
         self.USER_REG_DETAILS = 'user_reg_details.txt'
 
+
+    def get_name(self):
+        full_name = self.__first_name + " " + self.__last_name
+        return full_name
 
 
     def hash_password(self,password):
@@ -89,6 +93,8 @@ class Student:
                 print("Please enter a valid password {8 characters,Uppercase letters and Lowercase letters, At least one digit, No spaces , At least one character}")
             else:
                 self.save_to_file(email,self.hash_password(password))
+                self.__set_first_name(first_name)
+                self.__set_last_name(last_name)
                 print ("Registration successful")
 
 
@@ -137,6 +143,14 @@ class Student:
                 return courses
             else:
                 return False
+
+    def __set_first_name(self, first_name):
+        self.__first_name = first_name
+
+    def __set_last_name(self, last_name):
+        self.__last_name = last_name
+
+
 
 
 
