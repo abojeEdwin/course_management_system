@@ -1,7 +1,13 @@
 import re
 from os import write
 import bcrypt
-from courseManagementSystem.src.course_management_system.user import User
+
+from src.course_management_system import course
+from src.course_management_system.user import User
+from src.course_management_system.course import Course
+
+student_offered_courses = []
+course = Course()
 
 USER_DETAILS = 'user_details.txt'
 
@@ -48,6 +54,16 @@ def validate_email(email):
         pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,3}$'
         return re.match(pattern,email)
 
+def validate_duplicate_user_email(email):
+    with open(USER_DETAILS,'r') as file:
+        details = file.read()
+        for line in details.split("\n"):
+            if line:
+                stored_email,stored_password = line.split(':')
+                if stored_email == email:
+                    return False
+    return True
+
 
 def validate_user(email,password):
        with open(USER_DETAILS,'r') as file:
@@ -68,11 +84,31 @@ def login():
         print("Invalid username or password")
 
 
+def register_course():
+    while True:
+        course_name = input("Enter the course you want to register for : ")
+        if course_name.casefold() == course.get_course_name():
+            student_offered_courses.append(course_name)
+        else:
+            print("Your selected course has not been added ")
+            continue
+        break
+    while True:
+        email = input("Enter your email : ")
+        if not validate_email(email):
+            print("Please enter a valid email {example@gmail.com}")
+        elif validate_duplicate_user_email(email):
+            print("Your email already exist")
+        else:
+            print("Course registration successful")
+            continue
+        break
+
+def view_courses():
+    pass
+
 class Student(User):
-    def __init__(self,first_name,last_name,email,password):
+    def __init__(self, first_name, last_name, email, password):
         super().__init__(first_name, last_name, email, password)
-
-
-    student_offered_courses = []
 
 
