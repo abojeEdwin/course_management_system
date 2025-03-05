@@ -12,6 +12,7 @@ class Student:
         self.__email = None
         self.__password = None
         self.__student_offered_courses = []
+        self.__students_list = []
         self.__courses = []
         self.__student_grades = {}
         self.USER_DETAILS = 'user_login_details.txt'
@@ -95,6 +96,8 @@ class Student:
                 self.save_to_file(email,self.hash_password(password))
                 self.__set_first_name(first_name)
                 self.__set_last_name(last_name)
+                full_name = first_name + " " + last_name
+                self.__students_list.append(full_name)
                 print ("Registration successful")
 
 
