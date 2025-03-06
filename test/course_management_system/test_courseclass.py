@@ -2,8 +2,8 @@ import unittest
 from unittest import TestCase
 
 
-from courseManagementSystem.src.course_management_system.course import Course
-from courseManagementSystem.src.course_management_system.student import Student
+from src.course_management_system.course import Course
+from src.course_management_system.student import Student
 
 class TestCourse(TestCase):
     def setUp(self):
