@@ -1,19 +1,27 @@
 import unittest
-from src.course_management_system.student import Student
-
 
 class MyTestCase(unittest.TestCase):
-    def test_that_student_class_returns_correct_name(self):
-        student = Student("Edwin","Aboje","abojeedwin@gmail.com","123456")
-        actual = student.get_full_name()
-        expected = "Edwin Aboje"
-        self.assertEqual(actual, expected)
+    def test_that_student_can_register(self):
+        from src.course_management_system.student import Student
+        student = Student()
+        student.register("Edwin","Aboje","abojeedwin@gmail.com","Test123!")
+        self.assertEqual("Edwin Aboje", student.get_name())
 
-    def test_that_student_email_and_password_can_save_to_file(self):
-        student = Student("Edwin","Aboje","abojeedwin@gmail.com","123456")
-        actual = student.save_to_file("abojeedwin@gmail.com","123456")
-        expected = "Edwin Aboje"
-        self.assertEqual(actual,expected)
+    def test_that_student_uses_a_valid_email(self):
+        from src.course_management_system.student import Student
+        student = Student()
+        student.login("abojeedwin@gmail.com","Test123!")
+        self.assertEqual(True, student.validate_email("abojedwin@gmail.com"))
+
+    def test_that_student_uses_a_invalid_password(self):
+        from src.course_management_system.student import Student
+        student = Student()
+        student.login("abojeedwin@gmail.com", "Test123")
+        self.assertEqual(False,student.validate_password("Test123"))
+
+
+
+
 
 
 
