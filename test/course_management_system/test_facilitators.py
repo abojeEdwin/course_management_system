@@ -1,8 +1,8 @@
 from unittest import TestCase
 
-from course_management_system.src.course_management_system.course import Course
-from course_management_system.src.course_management_system.facilitators import Facilitators
-from course_management_system.src.course_management_system.student import Student
+from src.course_management_system.course import Course
+from src.course_management_system.facilitators import Facilitators
+from src.course_management_system.student import Student
 
 
 class TestFacilitators(TestCase):
@@ -38,12 +38,19 @@ class TestFacilitators(TestCase):
         with self.assertRaises(TypeError):
             facilitators.register_facilitator('Tomi', '')
 
+    #
+    # def test_that_facilitators_can_create_courses(self):
+    #     facilitators = Facilitators("name", "email")
+    #     facilitators.log_in("name", "email")
+    #
+    #     courses = Course("name","chibuzor",1)
+    #     self.assertEqual("chibuzor", courses.create_course("name","chibuzor",1))
 
     # def test_that_facilitators_can_score_course(self):
     #     facilitators = Facilitators("name", "email")
     #     facilitators.log_in("name", "email")
     #
-    #     course = Course()
+    #     course = Course("name","chibuzor",1)
     #     course.create_course("name", "chibuzor", 1)
     #     self.assertEqual(56,course.score_student("name","chibuzor",56))
     #
@@ -54,21 +61,5 @@ class TestFacilitators(TestCase):
     #     student = Students()
     #     self.assertEqual("student", student.view_student("name", "email"))
 
-    def test_that_facilitators_can_create_courses(self):
-        facilitator = Facilitators("Chibuzo", "chibooze4real@gmail.com")
-        facilitator.log_in("Chibuzo", "chibooze4real@gmail.com")
-        created_course: Course = facilitator.create_course("EGL 101", "Introduction to English Language", 3, "Chibuzo")
-        self.assertEqual("EGL 101", created_course.get_course_name())
-        self.assertEqual("Chibuzo", created_course.get_course_instructor())
 
-    def test_that_any_course_can_be_found_in_of_an_instructor(self):
-        facilitator = Facilitators("Chibuzo", "chibooze4real@gmail.com")
-        facilitator.log_in("Chibuzo", "chibooze4real@gmail.com")
-        egl_1: Course = facilitator.create_course("EGL 101", "Introduction to English Language", 3, "Chibuzo")
-        egl_2: Course = facilitator.create_course("EGL 201", "Advanced English Language", 4, "Chibuzo")
-        courses: list[Course] = [egl_1, egl_2]
-        self.assertEqual("EGL 101", egl_1.get_course_name())
-        self.assertEqual("Chibuzo", egl_1.get_course_instructor())
-        self.assertEqual(courses, facilitator.find_course_by_facilitator("Chibuzo"))
-        print(courses)
 

@@ -2,6 +2,9 @@ import re
 from os import write
 import bcrypt
 
+from src.course_management_system import course
+from src.course_management_system.course import Course
+
 class Student:
     def __init__(self):
         self.__first_name = None
