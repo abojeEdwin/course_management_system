@@ -2,8 +2,8 @@ import re
 from os import write
 import bcrypt
 
-#from src.course_management_system import course
-#from src.course_management_system.course import Course
+from src.course_management_system import course
+from src.course_management_system.course import Course
 
 class Student:
     def __init__(self):
@@ -12,7 +12,6 @@ class Student:
         self.__email = None
         self.__password = None
         self.__student_offered_courses = []
-        self.__students_list = []
         self.__courses = []
         self.__student_grades = {}
         self.USER_DETAILS = 'user_login_details.txt'
@@ -23,11 +22,6 @@ class Student:
         full_name = self.__first_name + " " + self.__last_name
         return full_name
 
-    def __set_first_name(self, first_name):
-        self.__first_name = first_name
-
-    def __set_last_name(self, last_name):
-        self.__last_name = last_name
 
     def hash_password(self,password):
         hashed_password = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
@@ -58,9 +52,7 @@ class Student:
 
     def validate_email(self,email):
             pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,3}$'
-            if not re.match(pattern, email):
-                return False
-            return True
+            return re.match(pattern,email)
 
     def validate_duplicate_user_email(self,email):
         with open(self.USER_DETAILS,'r') as file:
@@ -103,8 +95,6 @@ class Student:
                 self.save_to_file(email,self.hash_password(password))
                 self.__set_first_name(first_name)
                 self.__set_last_name(last_name)
-                full_name = first_name + " " + last_name
-                self.__students_list.append(full_name)
                 print ("Registration successful")
 
 
@@ -133,7 +123,7 @@ class Student:
         if not self.validate_email(email):
             print("Please enter a valid email {example@gmail.com}")
         else:
-            for courses in self.__courses:
+            for courses in self.__student_offered_courses:
                 print(courses)
 
     def view_course_instructor(self):
@@ -147,8 +137,20 @@ class Student:
             #for grades in
 
 
-    def get_offered_courses(self):
+    def get_offered_courses(self,course_name):
         for courses in self.__student_offered_courses:
-            return courses
+            if course_name == courses:
+                return courses
+            else:
+                return False
+
+    def __set_first_name(self, first_name):
+        self.__first_name = first_name
+
+    def __set_last_name(self, last_name):
+        self.__last_name = last_name
+
+
+
 
 

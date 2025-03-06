@@ -1,4 +1,4 @@
-from src.course_management_system.student import Student
+from courseManagementSystem.src.course_management_system.student import Student
 
 class Course:
     def __init__(self):
