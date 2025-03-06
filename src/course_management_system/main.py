@@ -22,6 +22,7 @@ def main():
                     password = input("Enter your password : ")
                     student = Student()
                     student.register(first_name, last_name, email, password)
+                    student.validate_email(email)
                     student.save_to_file(email, password)
 
                 case '2':
