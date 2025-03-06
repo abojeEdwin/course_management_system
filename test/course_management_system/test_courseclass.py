@@ -2,9 +2,8 @@ import unittest
 from unittest import TestCase
 
 
-from course_management_system.src.course_management_system.course import Course
-from course_management_system.src.course_management_system.student import Student
-from course_management_system.src.course_management_system.facilitators import Facilitators
+from src.course_management_system.course import Course
+from src.course_management_system.student import Student
 
 class TestCourse(TestCase):
     def setUp(self):
@@ -26,17 +25,8 @@ class TestCourse(TestCase):
     def test_that_course_has_a_list_of_students_when_i_find_student_by_name_returns_student(self):
         self.course.set_course_instructor("Miss Africa")
         self.course.set_course_name("Biology")
-        student = Student()
+        student = Student("Divine", "Favour", "divfav@gmail.com", "12ABcd@*")
         self.course.add_student(student)
         self.assertEqual(student, self.course.find_student_by_full_name("Divine Favour"))
-
-    def test_that_course_has_a_list_of_students_when_i_find_student_by_name_returns_student1(self):
-        self.course.set_course_instructor("Miss Africa")
-        self.course.set_course_name("Biology")
-        student = Student()
-        student.register("Divine", "Favour", "divfav@gmail.com", "12ABcd@*")
-        print(student.view_courses("divfav@gmail.com"))
-        facilitator = Facilitators("Chi Gozie", "chigozie@gmail.com")
-        facilitator.register_facilitator("Chi Gozie", "chigozie@gmail.com")
 
 

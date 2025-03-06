@@ -2,6 +2,9 @@ import re
 from os import write
 import bcrypt
 
+from src.course_management_system import course
+from src.course_management_system.course import Course
+
 class Student:
     def __init__(self):
         self.__first_name = None
@@ -48,8 +51,11 @@ class Student:
         return True
 
     def validate_email(self,email):
-            pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,3}$'
-            return re.match(pattern,email)
+        pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,3}$'
+        if not re.match(pattern,email):
+            return False
+        return True
+
 
     def validate_duplicate_user_email(self,email):
         with open(self.USER_DETAILS,'r') as file:
@@ -96,11 +102,12 @@ class Student:
 
 
     def register_course(self,course_name,email):
-            course = Course()
-            if course_name == course.get_course_name():
-                self.__student_offered_courses.append(course_name)
-            else:
-                print("Your selected course has not been added ")
+        from src.course_management_system.course import Course
+        courses = Course()
+        if course_name == courses.get_course_name():
+            self.__student_offered_courses.append(course_name)
+        else:
+            print("Your selected course has not been added ")
             self.validate_reg_email(email)
 
 
