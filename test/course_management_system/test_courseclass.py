@@ -15,6 +15,13 @@ class TestCourse(TestCase):
         self.assertEqual("Miss Jennifer", courses.find_course_in_courses_by("Miss Jennifer").get_course_facilitator())
         self.assertEqual("Introduction to Java", courses.find_course_in_courses_by("Miss Jennifer").get_course_title())
 
+    def test_that_instructor_registers_first_before_course_is_created(self):
+        from src.course_management_system.facilitator import Facilitator
+        facilitator = Facilitator()
+        self.assertTrue(facilitator.register("Miss Jennifer", "jenn@gmail.com", "Pass12@_"))
+        from src.course_management_system.courses import Courses
+        courses = Courses()
+        courses.add("Introduction to Java", "JAV 101", "Miss Jennifer")
 
     # def test_that_course_grade_can_be_retrieved_correctly(self):
     #     self.course.set_course_grade(100)

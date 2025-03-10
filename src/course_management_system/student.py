@@ -95,13 +95,13 @@ class Student:
                 print ("Registration successful")
 
 
-    def register_course(self,course_name,email):
-            course = Course()
-            if course_name == course.get_course_name():
-                self.__student_offered_courses.append(course_name)
-            else:
-                print("Your selected course has not been added ")
-            self.validate_reg_email(email)
+    # def register_course(self,course_name,email):
+    #         course = Course()
+    #         if course_name == course.get_course_name():
+    #             self.__student_offered_courses.append(course_name)
+    #         else:
+    #             print("Your selected course has not been added ")
+    #         self.validate_reg_email(email)
 
 
     def validate_reg_email(self,email):
