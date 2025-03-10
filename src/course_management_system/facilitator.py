@@ -1,7 +1,7 @@
 from src.course_management_system.course import Course
 
 
-class Facilitators:
+class Facilitator:
     def __init__(self):
         self.name = None
         self.email_address = None
@@ -28,24 +28,20 @@ class Facilitators:
             return score
 
     def create_course(self, course_title, course_code, course_facilitator):
-        from src.course_management_system.courses import Courses
-        courses = Courses()
-        course = Course()
+        # from src.course_management_system.courses import Courses
+        # courses = Courses()
+        course = Course(course_title, course_code, course_facilitator)
 
-        course.set_course_title(course_title)
-        course.set_course_code(course_code)
-        course.set_course_facilitator(course_facilitator)
-
-        courses.add(course_title, course_code, course_facilitator)
+        # courses.add(course_title, course_code, course_facilitator)
         return course
 
-    def find_course_by_facilitator(self, facilitator_name):
-        from src.course_management_system.courses import Courses
-        courses = Courses()
-        available_courses = courses.view_courses()
-        for course in available_courses:
-            if facilitator_name == course.get_course_facilitator():
-                return course
+    # def find_course_by_facilitator(self, facilitator_name): -> Course:
+    #     from src.course_management_system.courses import Courses
+    #     courses = Courses()
+    #     available_courses = courses.view_courses()
+    #     for course in available_courses:
+    #         if facilitator_name == course.get_course_facilitator():
+    #             return course
 
         # courses = []
         # for course in self.courses:
