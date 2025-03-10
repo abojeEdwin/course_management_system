@@ -1,11 +1,11 @@
-from course_management_system.src.course_management_system.course import Course
+from src.course_management_system.course import Course
 
 
 class Facilitators:
-    def __init__(self,name,email_address):
-        self.courses = []
-        self.name = name
-        self.email_address = email_address
+    def __init__(self):
+        self.name = None
+        self.email_address = None
+        self.password = None
 
     def register_facilitator(self, name, email_address):
         if name and email_address:
@@ -27,20 +27,30 @@ class Facilitators:
         if student_name and course_name:
             return score
 
-    def create_course(self, course_name, course_title, course_units, facilitator_name):
+    def create_course(self, course_title, course_code, course_facilitator):
+        from src.course_management_system.courses import Courses
+        courses = Courses()
         course = Course()
-        course.set_course_name(course_name)
+
         course.set_course_title(course_title)
-        course.set_course_unit(course_units)
-        course.set_course_instructor(facilitator_name)
-        self.courses.append(course)
+        course.set_course_code(course_code)
+        course.set_course_facilitator(course_facilitator)
+
+        courses.add(course_title, course_code, course_facilitator)
         return course
 
     def find_course_by_facilitator(self, facilitator_name):
-        courses = []
-        for course in self.courses:
-            if course.get_course_instructor() == facilitator_name:
-                courses.append(course)
-        return courses
+        from src.course_management_system.courses import Courses
+        courses = Courses()
+        available_courses = courses.view_courses()
+        for course in available_courses:
+            if facilitator_name == course.get_course_facilitator():
+                return course
+
+        # courses = []
+        # for course in self.courses:
+        #     if course.get_course_instructor() == facilitator_name:
+        #         courses.append(course)
+        # return courses
 
 

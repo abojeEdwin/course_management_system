@@ -1,5 +1,5 @@
-from course_management_system.src.course_management_system.student import Student
-from course_management_system.src.course_management_system.course import Course
+from src.course_management_system.student import Student
+from src.course_management_system.course import Course
 import sys
 
 
