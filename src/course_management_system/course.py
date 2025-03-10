@@ -1,12 +1,13 @@
-from course_management_system.src.course_management_system.student import Student
-from course_management_system.src.course_management_system.user import User
+
+from src.course_management_system.student import Student
+from src.course_management_system.user import User
 
 class Course:
     def __init__(self):
         self.facilitator_name = None
         self.course_title = None
         self.course_unit = None
-        self.students : list[Student] = []
+        self.students = []
 
     def set_course_name(self, course_name):
         self.course_name = course_name
@@ -39,12 +40,20 @@ class Course:
         return self.facilitator
 
     def find_student_by_full_name(self, student_name):
-        for student in self.students:
-            if student.get_name() == student_name and student is not None:
-                return student
+        for student_name in self.students:
+            if student_name in self.students and student_name is not None:
+                return True
+            return False
 
-    def add_student(self, student):
-        self.students.append(student)
+    def add_student(self, student : Student):
+        # from src.course_management_system.student import Student
+        my_student = Student
+        self.students.append(my_student.get_student_list(student))
+        # name = student.get_student_list(Student())
+        # for student_names in name:
+        #     self.students.append(student_names)
+
+
 
     def set_course_title(self, course_title):
         self.course_title = course_title

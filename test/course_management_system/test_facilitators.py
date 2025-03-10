@@ -1,8 +1,8 @@
 from unittest import TestCase
 
-from course_management_system.src.course_management_system.course import Course
-from course_management_system.src.course_management_system.facilitators import Facilitators
-from course_management_system.src.course_management_system.student import Student
+from src.course_management_system.course import Course
+from src.course_management_system.facilitators import Facilitators
+from src.course_management_system.student import Student
 
 
 class TestFacilitators(TestCase):

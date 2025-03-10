@@ -1,5 +1,6 @@
-from course_management_system.src.course_management_system.student import Student
-from course_management_system.src.course_management_system.course import Course
+from src.course_management_system.student import Student
+from src.course_management_system.course import Course
+from src.course_management_system.facilitators import Facilitators
 import sys
 
 
@@ -25,7 +26,10 @@ def main():
                     student.save_to_file(email, password)
 
                 case '2':
-                    pass
+                    name = input("Enter your name : ")
+                    email = input("Enter your email :")
+                    facilitator = Facilitators(name,email)
+
 
                 case '3':
                     email = input("Enter your email : ")
@@ -36,7 +40,8 @@ def main():
 
                 case '4':
                     email = input("Enter your email :")
-                    password = input("Enter your password :")
+                    name = input("Enter your name :")
+                    facilitator = Facilitators(name,email)
                     pass
                 case '5':
                     sys.exit(0)
@@ -77,6 +82,21 @@ def student_menu():
 
             case '5':
                 sys.exit(0)
+
+def facilitator_menu():
+    facilitator_message = """
+                1 -> Create Course
+                2 -> Grade Student
+                3 -> Find Course
+    """
+    match facilitator_message:
+        case '1':
+                facilitator = Facilitators()
+                course_name = input("Enter the course name : ")
+                course_title = input ("Enter the course title : ")
+                course_units = input ("Enter the course unit : ")
+                facilitator_name = input ("What is the name of the facilitator :")
+                facilitator.create_course(course_name, course_title, course_units, facilitator_name)
 
 
 

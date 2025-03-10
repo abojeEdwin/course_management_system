@@ -4,20 +4,31 @@ import bcrypt
 
 class Student:
     def __init__(self):
+        self.__full_name = None
         self.__first_name = None
-        self.__last_name = None
+        self.__last_name =  None
         self.__email = None
         self.__password = None
         self.__student_offered_courses = []
         self.__courses = []
+        self.__list_of_student = []
         self.__student_grades = {}
         self.USER_DETAILS = 'user_login_details.txt'
         self.USER_REG_DETAILS = 'user_reg_details.txt'
 
+    def get_student_list(self):
+        for students in self.__list_of_student:
+            return students
+
+    def set_first_name(self, first_name):
+        self.__first_name = first_name
+
+    def set_last_name(self, last_name):
+        self.__last_name = last_name
 
     def get_name(self):
-        full_name = self.__first_name + " " + self.__last_name
-        return full_name
+        return self.__first_name + " " + self.__last_name
+
 
 
     def hash_password(self,password):
@@ -90,18 +101,20 @@ class Student:
                 print("Please enter a valid password {8 characters,Uppercase letters and Lowercase letters, At least one digit, No spaces , At least one character}")
             else:
                 self.save_to_file(email,self.hash_password(password))
-                self.__set_first_name(first_name)
-                self.__set_last_name(last_name)
+                self.set_first_name(first_name)
+                self.set_last_name(last_name)
+                self.__list_of_student.append(self.__full_name)
                 print ("Registration successful")
 
 
     def register_course(self,course_name,email):
-            course = Course()
-            if course_name == course.get_course_name():
-                self.__student_offered_courses.append(course_name)
-            else:
-                print("Your selected course has not been added ")
-            self.validate_reg_email(email)
+        from src.course_management_system.course import Course
+        course = Course()
+        if course_name == course.get_course_name():
+            self.__student_offered_courses.append(course_name)
+        else:
+            print("Your selected course has not been added ")
+        self.validate_reg_email(email)
 
 
     def validate_reg_email(self,email):
@@ -140,14 +153,3 @@ class Student:
                 return courses
             else:
                 return False
-
-    def __set_first_name(self, first_name):
-        self.__first_name = first_name
-
-    def __set_last_name(self, last_name):
-        self.__last_name = last_name
-
-
-
-
-
