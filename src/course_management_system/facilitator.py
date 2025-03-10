@@ -9,6 +9,7 @@ class Facilitator:
         self.name = None
         self.email_address = None
         self.password = None
+        self.facilitators_courses: list[Course] = []
 
 
     def set_name(self, name):
@@ -47,13 +48,21 @@ class Facilitator:
             print('Facilitator successfully registered')
             return True
 
+    def login(self, email_address, password):
+        if self.validate_reg_details(email_address, password) is False:
+            print("Invalid registration details.")
+            return False
+        else:
+            print("Logged in successfully.")
+            return True
+
     @staticmethod
     def hash_facilitator_password(password):
         return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
 
     @staticmethod
     def save_registration_details_to_file(name, email_address, hashed_password):
-        with open('reg_details.txt', 'a') as reg_details_file:
+        with open('facilitator_reg_details.txt', 'a') as reg_details_file:
             reg_details_file.write(f'{name}:{email_address}:{hashed_password.decode('utf-8')}\n')
 
         # if name and email_address:
@@ -62,6 +71,16 @@ class Facilitator:
         #     raise TypeError("Name cannot be empty")
         # if email_address == "":
         #     raise TypeError("Email Address cannot be empty")
+
+    @staticmethod
+    def validate_reg_details(email_address, password):
+        with open('facilitator_reg_details.txt', 'r') as reg_details_file:
+            for line in reg_details_file:
+                stored_name, stored_email_address, stored_password = line.strip().split(':')
+                if stored_email_address == email_address:
+                    return bcrypt.checkpw(password.encode('utf-8'), stored_password.encode('utf-8'))
+                else:
+                    return False
 
     @staticmethod
     def validate_facilitator_email(email_address):
@@ -87,33 +106,36 @@ class Facilitator:
         else:
             return False
 
-    def log_in(self,name,email_address):
-        if name and email_address:
-            return "You've been logged in"
-        if name == "":
-            raise TypeError("Name cannot be empty")
-        if email_address == "":
-            raise TypeError("Email Address cannot be empty")
+    # def log_in(self,name,email_address):
+    #     if name and email_address:
+    #         return "You've been logged in"
+    #     if name == "":
+    #         raise TypeError("Name cannot be empty")
+    #     if email_address == "":
+    #         raise TypeError("Email Address cannot be empty")
 
     def score_student(self,student_name,score,course_name):
         if student_name and course_name:
             return score
 
     def create_course(self, course_title, course_code, course_facilitator):
-        # from src.course_management_system.courses import Courses
-        # courses = Courses()
         course = Course(course_title, course_code, course_facilitator)
+        self.facilitators_courses.append(course)
 
-        # courses.add(course_title, course_code, course_facilitator)
+        from src.course_management_system.admin import Admin
+        admin = Admin()
+        admin.add_course(course)
+
         return course
 
-    # def find_course_by_facilitator(self, facilitator_name): -> Course:
-    #     from src.course_management_system.courses import Courses
-    #     courses = Courses()
-    #     available_courses = courses.view_courses()
-    #     for course in available_courses:
-    #         if facilitator_name == course.get_course_facilitator():
-    #             return course
+
+    def view_created_courses(self, course_facilitator):
+        return self.facilitators_courses
+
+    def find_course_by_facilitator(self, facilitator_name):
+        for course in self.facilitators_courses:
+            if course.get_course_facilitator() == facilitator_name:
+                return course
 
         # courses = []
         # for course in self.courses:

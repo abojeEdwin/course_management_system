@@ -20,8 +20,9 @@ class Course:
         return self.course_code
     def set_course_facilitator(self, course_facilitator):
         self.course_facilitator = course_facilitator
+
     def get_course_facilitator(self):
-        return self.course_facilitator
+            return self.course_facilitator
 
     def set_course_grade(self, course_score):
         if 70 <= course_score <= 100:
