@@ -8,16 +8,16 @@ from src.course_management_system.student import Student
 class TestFacilitators(TestCase):
     def test_that_facilitators_can_register(self):
         facilitators = Facilitators("name", "email")
-        self.assertEqual("You've been registered successfully", facilitators.register_facilitator("name", "email"))
+        self.assertEqual("You've been registered successfully", facilitators.register("name", "email"))
 
     def test_that_name_and_email_is_validated(self):
         facilitators = Facilitators("name", "email")
-        facilitators.register_facilitator("name", "email")
+        facilitators.register("name", "email")
         with self.assertRaises(TypeError):
-            facilitators.register_facilitator("", 'email')
+            facilitators.register("", 'email')
 
         with self.assertRaises(TypeError):
-            facilitators.register_facilitator('name', '')
+            facilitators.register('name', '')
 
     def test_that_facilitators_can_login(self):
         facilitators = Facilitators("name", "email")
@@ -30,13 +30,13 @@ class TestFacilitators(TestCase):
             facilitators.log_in("", 'email')
 
         with self.assertRaises(TypeError):
-            facilitators.register_facilitator('name', '')
+            facilitators.register('name', '')
 
         with self.assertRaises(TypeError):
-            facilitators.register_facilitator('', '')
+            facilitators.register('', '')
 
         with self.assertRaises(TypeError):
-            facilitators.register_facilitator('Tomi', '')
+            facilitators.register('Tomi', '')
 
 
     # def test_that_facilitators_can_score_course(self):
