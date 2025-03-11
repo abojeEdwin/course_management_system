@@ -11,7 +11,6 @@ class Student:
         self.__password = None
 
     student_offered_courses = []
-    courses = []
     list_of_student = []
     student_grades = {}
     def set_first_name(self, first_name):
@@ -99,13 +98,13 @@ class Student:
                 return "Registration successful"
 
 
-    def register_course(self,course_title,email):
+    def register_course(self,course_name,email):
         from src.course_management_system.course import Course
         course = Course()
 
         self.validate_reg_email(email)
-        if course_title == course.get_course_name():
-            self.student_offered_courses.append(course.get_course_name())
+        if course_name == course.get_course_title():
+            self.student_offered_courses.append(course_name)
         else:
             return "Your selected course has not been added "
 
@@ -125,10 +124,10 @@ class Student:
 
     def view_courses(self,email):
         if not self.validate_email(email):
-            print("Please enter a valid email {example@gmail.com}")
+            return "Please enter a valid email {example@gmail.com}"
         else:
             for courses in self.student_offered_courses:
-                print(courses)
+                return courses
 
     def view_course_instructor(self):
         while True:
