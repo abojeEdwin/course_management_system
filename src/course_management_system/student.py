@@ -45,9 +45,9 @@ class Student:
     def validate_name(self,first_name,last_name):
         pattern = r"^([A-Za-z]+$)"
         if not re.match(pattern, first_name):
-            return False
+            raise TypeError("Please enter a valid first name.")
         if not re.match(pattern, last_name):
-            return False
+            raise TypeError("PLease enter a valid last name")
         return True
 
     def validate_email(self,email):
@@ -84,29 +84,31 @@ class Student:
 
     def register(self,first_name,last_name,email, password):
             if not self.validate_name(first_name,last_name):
-                print ("Please enter a valid name.")
+                return "Please enter a valid name."
 
             if not self.validate_email(email):
-                print("Please enter a valid email address {example@gmail.com}")
+                return "Please enter a valid email address {example@gmail.com}"
 
             if not self.validate_password(password):
-                print("Please enter a valid password {8 characters,Uppercase letters and Lowercase letters, At least one digit, No spaces , At least one character}")
+                return "Please enter a valid password {8 characters,Uppercase letters and Lowercase letters, At least one digit, No spaces , At least one character}"
             else:
                 self.save_to_file(email,self.hash_password(password))
                 self.set_first_name(first_name)
                 self.set_last_name(last_name)
                 self.list_of_student.append(self.__full_name)
-                print ("Registration successful")
+                return "Registration successful"
 
 
-    def register_course(self,course_name,email):
+    def register_course(self,course_title,email):
         from src.course_management_system.course import Course
         course = Course()
-        if course_name == course.get_course_name():
+
+        self.validate_reg_email(email)
+        if course_title == course.get_course_name():
             self.student_offered_courses.append(course.get_course_name())
         else:
-            print("Your selected course has not been added ")
-        self.validate_reg_email(email)
+            return "Your selected course has not been added "
+
 
 
     def validate_reg_email(self,email):
