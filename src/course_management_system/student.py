@@ -92,16 +92,23 @@ class Student:
                 self.save_to_file(email,self.hash_password(password))
                 self.__set_first_name(first_name)
                 self.__set_last_name(last_name)
+                # why wasn't the student class instantiated to set the student's full name?
+
+                from src.course_management_system.admin import Admin
+                admin = Admin()
+                admin.add_student(self)
+                # I planned to add the student object I thought would be instantiated before setting the full name, so i can append them to the admin class.
+
                 print ("Registration successful")
 
 
-    def register_course(self,course_name,email):
-            course = Course()
-            if course_name == course.get_course_name():
-                self.__student_offered_courses.append(course_name)
-            else:
-                print("Your selected course has not been added ")
-            self.validate_reg_email(email)
+    # def register_course(self,course_name,email):
+    #         course = Course()
+    #         if course_name == course.get_course_name():
+    #             self.__student_offered_courses.append(course_name)
+    #         else:
+    #             print("Your selected course has not been added ")
+    #         self.validate_reg_email(email)
 
 
     def validate_reg_email(self,email):
@@ -146,6 +153,12 @@ class Student:
 
     def __set_last_name(self, last_name):
         self.__last_name = last_name
+
+    @staticmethod
+    def view_available_courses():
+        from src.course_management_system.admin import Admin
+        admin = Admin()
+        return admin.get_courses()
 
 
 
