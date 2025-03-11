@@ -3,10 +3,12 @@ from src.course_management_system.user import User
 
 class Course:
     def __init__(self, course_title, course_code, course_facilitator):
+        self.is_created = None
         self.course_title = course_title
         self.course_code = course_code
         self.course_facilitator = course_facilitator
         self.students : list[Student] = []
+
 
     def set_course_title(self, course_title):
         self.course_title = course_title

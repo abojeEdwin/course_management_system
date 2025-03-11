@@ -10,12 +10,14 @@ class TestCourse(TestCase):
     def test_that_course_title_code_facilitator_are_required_to_create_course_correctly(self):
         from src.course_management_system.facilitator import Facilitator
         facilitator = Facilitator()
-        self.assertTrue(facilitator.register("Miss Jennifer", "jenn@gmail.com", "Pass12@_"))
+        facilitator.register("Miss Jennifer", "jenn@gmail.com", "Pass12@_")
+        self.assertTrue(facilitator.is_registered())
         self.assertTrue(facilitator.login("jenn@gmail.com", "Pass12@_"))
 
         from src.course_management_system.courses import Courses
         courses = Courses()
         facilitator.create_course("Introduction to Java", "JAV 101", "Miss Jennifer")
+        self.assertTrue(facilitator.is_course_created())
         self.assertEqual("Miss Jennifer", facilitator.find_course_by_facilitator("Miss Jennifer").get_course_facilitator())
         courses.add("Introduction to Java", "JAV 101", "Miss Jennifer")
         self.assertEqual("Miss Jennifer", courses.find_course_in_courses_by("Miss Jennifer").get_course_facilitator())
@@ -32,12 +34,17 @@ class TestCourse(TestCase):
     def test_that_instructors_can_view_students_enrolled_in_their_course(self):
         from src.course_management_system.facilitator import Facilitator
         facilitator = Facilitator()
-        self.assertTrue(facilitator.register("Miss Jennifer", "jenn@gmail.com", "Pass12@_"))
+        facilitator.register("Miss Jennifer", "jenn@gmail.com", "Pass12@_")
+        self.assertTrue(facilitator.is_registered())
         course = facilitator.create_course("Introduction to Java", "JAV 101", "Miss Jennifer")
+        self.assertTrue(facilitator.is_course_created())
+
         from src.course_management_system.admin import Admin
         admin = Admin()
+        admin.add_facilitator(facilitator)
         admin.add_course(course)
         print(admin.get_courses())
+        print(admin.get_facilitators())
         # from src.course_management_system.courses import Courses
         # courses = Courses()
         # courses.add("Introduction to Java", "JAV 101", "Miss Jennifer")
@@ -48,7 +55,7 @@ class TestCourse(TestCase):
         from src.course_management_system.student import Student
         student = Student()
         student.register("John", "Doe", "jdoe@gmail.com", "passWO1@")
-        print(student.view_available_courses())
+        # print(student.view_available_courses())
 
 
 

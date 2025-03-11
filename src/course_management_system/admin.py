@@ -7,10 +7,15 @@ class Admin:
         self.courses: list[Course] = []
         self.students: list[Student] = []
 
-    def add_facilitator(self, facilitator):
-        self.facilitators.append(facilitator)
-    def add_course(self, course):
-        self.courses.append(course)
+    def add_facilitator(self, facilitator: Facilitator):
+        if facilitator.is_registered() is True:
+            self.facilitators.append(facilitator)
+
+    def add_course(self, course : Course):
+        for facilitator in self.facilitators:
+            if facilitator.is_course_created() is True:
+                self.courses.append(course)
+
     def add_student(self, student):
         self.students.append(student)
 
