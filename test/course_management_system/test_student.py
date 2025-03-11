@@ -23,7 +23,14 @@ class MyTestCase(unittest.TestCase):
         student = Student()
         student.register("Edwin", "Aboje", "abojeedwin@gmail.com", "Test123!")
         student.login("abojeedwin@gmail.com", "Test123!")
-        self.assertEqual("Your selected course has not been added",student.register_course("Chemistry","abojeedwin@gmail.com"))
+        self.assertEqual("Your selected course has not been added ",student.register_course("Chemistry","abojeedwin@gmail.com"))
+
+    def test_that_student_can_view_courses_enrolled_for(self):
+        student = Student()
+        student.register("Edwin", "Aboje", "abojeedwin@gmail.com", "Test123!")
+        student.login("abojeedwin@gmail.com", "Test123!")
+        student.register_course("Chemistry", "abojeedwin@gmail.com")
+        self.assertEqual("Chemistry",student.view_courses("abojeedwin@gmail.com"))
 
 
 
