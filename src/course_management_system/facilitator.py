@@ -87,13 +87,13 @@ class Facilitator:
         else:
             return False
 
-    def log_in(self,name,email_address):
-        if name and email_address:
-            return "You've been logged in"
-        if name == "":
-            raise TypeError("Name cannot be empty")
-        if email_address == "":
-            raise TypeError("Email Address cannot be empty")
+    # def log_in(self,name,email_address):
+    #     if name and email_address:
+    #         return "You've been logged in"
+    #     if name == "":
+    #         raise TypeError("Name cannot be empty")
+    #     if email_address == "":
+    #         raise TypeError("Email Address cannot be empty")
 
     def score_student(self,student_name,score,course_name):
         if student_name and course_name:
