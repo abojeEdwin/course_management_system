@@ -47,7 +47,7 @@ class Student:
         if not re.match(pattern, first_name):
             raise TypeError("Please enter a valid first name.")
         if not re.match(pattern, last_name):
-            raise TypeError("PLease enter a valid last name")
+            raise TypeError("Please enter a valid last name")
         return True
 
     def validate_email(self,email):
