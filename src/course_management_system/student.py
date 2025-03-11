@@ -4,32 +4,35 @@ import bcrypt
 
 class Student:
     def __init__(self):
+        self.__full_name = None
         self.__first_name = None
-        self.__last_name = None
+        self.__last_name =  None
         self.__email = None
         self.__password = None
-        self.__student_offered_courses = []
-        self.__courses = []
-        self.__student_grades = {}
-        self.USER_DETAILS = 'user_login_details.txt'
-        self.USER_REG_DETAILS = 'user_reg_details.txt'
 
+    student_offered_courses = []
+    courses = []
+    list_of_student = []
+    student_grades = {}
+    def set_first_name(self, first_name):
+        self.__first_name = first_name
+
+    def set_last_name(self, last_name):
+        self.__last_name = last_name
 
     def get_name(self):
-        full_name = self.__first_name + " " + self.__last_name
-        return full_name
-
+        return self.__first_name + " " + self.__last_name
 
     def hash_password(self,password):
         hashed_password = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
         return hashed_password
 
     def save_to_file(self,email, password):
-        with open(self.USER_DETAILS,'a') as file:
+        with open('user_login_details.txt','a') as file:
             file.write(f'{email}:{password.decode("utf-8")}\n')
 
     def save_course_reg_to_file(self,email,course_name):
-        with open(self.USER_REG_DETAILS,'a') as file:
+        with open('user_reg_details.txt','a') as file:
             file.write(f'{email}:{course_name}\n')
 
 
@@ -42,9 +45,9 @@ class Student:
     def validate_name(self,first_name,last_name):
         pattern = r"^([A-Za-z]+$)"
         if not re.match(pattern, first_name):
-            return False
+            raise TypeError("Please enter a valid first name.")
         if not re.match(pattern, last_name):
-            return False
+            raise TypeError("Please enter a valid last name")
         return True
 
     def validate_email(self,email):
@@ -52,7 +55,7 @@ class Student:
             return re.match(pattern,email)
 
     def validate_duplicate_user_email(self,email):
-        with open(self.USER_DETAILS,'r') as file:
+        with open('user_login_details.txt','r') as file:
             details = file.read()
             for line in details.split("\n"):
                 if line:
@@ -63,7 +66,7 @@ class Student:
 
 
     def validate_user(self,email,password):
-           with open(self.USER_DETAILS,'r') as file:
+           with open('user_login_details.txt','r') as file:
                 details = file.read()
                 for line in details.split("\n"):
                     if line:
@@ -81,38 +84,35 @@ class Student:
 
     def register(self,first_name,last_name,email, password):
             if not self.validate_name(first_name,last_name):
-                print ("Please enter a valid name.")
+                return "Please enter a valid name."
 
             if not self.validate_email(email):
-                print("Please enter a valid email address {example@gmail.com}")
+                return "Please enter a valid email address {example@gmail.com}"
 
             if not self.validate_password(password):
-                print("Please enter a valid password {8 characters,Uppercase letters and Lowercase letters, At least one digit, No spaces , At least one character}")
+                return "Please enter a valid password {8 characters,Uppercase letters and Lowercase letters, At least one digit, No spaces , At least one character}"
             else:
                 self.save_to_file(email,self.hash_password(password))
-                self.__set_first_name(first_name)
-                self.__set_last_name(last_name)
-                # why wasn't the student class instantiated to set the student's full name?
-
-                from src.course_management_system.admin import Admin
-                admin = Admin()
-                admin.add_student(self)
-                # I planned to add the student object I thought would be instantiated before setting the full name, so i can append them to the admin class.
-
-                print ("Registration successful")
+                self.set_first_name(first_name)
+                self.set_last_name(last_name)
+                self.list_of_student.append(self.__full_name)
+                return "Registration successful"
 
 
-    # def register_course(self,course_name,email):
-    #         course = Course()
-    #         if course_name == course.get_course_name():
-    #             self.__student_offered_courses.append(course_name)
-    #         else:
-    #             print("Your selected course has not been added ")
-    #         self.validate_reg_email(email)
+    def register_course(self,course_title,email):
+        from src.course_management_system.course import Course
+        course = Course()
+
+        self.validate_reg_email(email)
+        if course_title == course.get_course_name():
+            self.student_offered_courses.append(course.get_course_name())
+        else:
+            return "Your selected course has not been added "
+
 
 
     def validate_reg_email(self,email):
-        with open(self.USER_REG_DETAILS, 'r') as file:
+        with open('user_reg_details.txt', 'r') as file:
             details = file.read()
             for line in details.split("\n"):
                 if line:
@@ -127,13 +127,12 @@ class Student:
         if not self.validate_email(email):
             print("Please enter a valid email {example@gmail.com}")
         else:
-            for courses in self.__student_offered_courses:
+            for courses in self.student_offered_courses:
                 print(courses)
 
     def view_course_instructor(self):
         while True:
             course_instructor = input("Enter your course : ")
-
 
     def view_grade(self,email):
             if not self.validate_email(email):
@@ -142,25 +141,8 @@ class Student:
 
 
     def get_offered_courses(self,course_name):
-        for courses in self.__student_offered_courses:
+        for courses in self.student_offered_courses:
             if course_name == courses:
                 return courses
             else:
                 return False
-
-    def __set_first_name(self, first_name):
-        self.__first_name = first_name
-
-    def __set_last_name(self, last_name):
-        self.__last_name = last_name
-
-    @staticmethod
-    def view_available_courses():
-        from src.course_management_system.admin import Admin
-        admin = Admin()
-        return admin.get_courses()
-
-
-
-
-

@@ -1,0 +1,93 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"e3c2c133-910a-444e-97cc-2fe7a9573081\" name=\"Changes\" comment=\"\">\n      <change afterPath=\"$PROJECT_DIR$/__init__.py\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/course_management_system/facilitators.py\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/test/course_management_system/test_facilitators.py\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Python Unit Test\" />\n        <option value=\"Python Script\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;abojeEdwin&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/abojeEdwin/courseManagementSystem.git&quot;,\n    &quot;accountId&quot;: &quot;6447353b-24ba-4dde-9def-180c2516e309&quot;\n  }\n}</component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 5\n}</component>\n  <component name=\"ProjectId\" id=\"2thtxEnh5t526zYg8HdPSaHaNCU\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"Python tests.Python tests for test_facilitator.MyTestCase.test_that_facilitator_class_returns_correct_name.executor\": \"Run\",\n    \"Python tests.Python tests for test_facilitator.MyTestCase.test_that_facilitator_email_and_password_can_save_to_file.executor\": \"Run\",\n    \"Python.User.executor\": \"Run\",\n    \"Python.main.executor\": \"Run\",\n    \"Python.uml.executor\": \"Run\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"RunOnceActivity.git.unshallow\": \"true\",\n    \"git-widget-placeholder\": \"Merging course-mg-branch\",\n    \"last_opened_file_path\": \"/home/omachoko/courseManagementSystem\",\n    \"node.js.detected.package.eslint\": \"true\",\n    \"node.js.detected.package.tslint\": \"true\",\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\n    \"nodejs_package_manager_path\": \"npm\",\n    \"vue.rearranger.settings.migration\": \"true\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/test\" />\n      <recent name=\"$PROJECT_DIR$/src\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Python.main\">\n    <configuration name=\"main\" type=\"PythonConfigurationType\" factoryName=\"Python\" nameIsGenerated=\"true\">\n      <module name=\"courseManagementSystem\" />\n      <option name=\"ENV_FILES\" value=\"\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/main.py\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"Python tests for test.course_management_system.test_student.MyTestCase.test_that_facilitator_class_returns_correct_name\" type=\"tests\" factoryName=\"Autodetect\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"courseManagementSystem\" />\n      <option name=\"ENV_FILES\" value=\"\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/test/course_management_system\" />\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\n      <option name=\"_new_additionalArguments\" value=\"&quot;&quot;\" />\n      <option name=\"_new_target\" value=\"&quot;test.course_management_system.test_student.MyTestCase.test_that_facilitator_class_returns_correct_name&quot;\" />\n      <option name=\"_new_targetType\" value=\"&quot;PYTHON&quot;\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"Python tests for test.course_management_system.test_student.MyTestCase.test_that_facilitator_email_and_password_can_save_to_file\" type=\"tests\" factoryName=\"Autodetect\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"courseManagementSystem\" />\n      <option name=\"ENV_FILES\" value=\"\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/test/course_management_system\" />\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\n      <option name=\"_new_additionalArguments\" value=\"&quot;&quot;\" />\n      <option name=\"_new_target\" value=\"&quot;test.course_management_system.test_student.MyTestCase.test_that_facilitator_email_and_password_can_save_to_file&quot;\" />\n      <option name=\"_new_targetType\" value=\"&quot;PYTHON&quot;\" />\n      <method v=\"2\" />\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Python tests.Python tests for test.course_management_system.test_student.MyTestCase.test_that_facilitator_email_and_password_can_save_to_file\" />\n        <item itemvalue=\"Python tests.Python tests for test.course_management_system.test_student.MyTestCase.test_that_facilitator_class_returns_correct_name\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PY-243.25659.43\" />\n        <option value=\"bundled-python-sdk-181015f7ab06-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.25659.43\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"e3c2c133-910a-444e-97cc-2fe7a9573081\" name=\"Changes\" comment=\"\" />\n      <created>1740816380514</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1740816380514</updated>\n      <workItem from=\"1740816385255\" duration=\"10589000\" />\n      <workItem from=\"1740906912573\" duration=\"21840000\" />\n      <workItem from=\"1741167285211\" duration=\"3760000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\n    <SUITE FILE_PATH=\"coverage/courseManagementSystem$.coverage\" NAME=\" Coverage Results\" MODIFIED=\"1740921075129\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/test/course_management_system\" />\n    <SUITE FILE_PATH=\"coverage/courseManagementSystem$uml.coverage\" NAME=\"uml Coverage Results\" MODIFIED=\"1740819153131\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" />\n    <SUITE FILE_PATH=\"coverage/courseManagementSystem$User.coverage\" NAME=\"User Coverage Results\" MODIFIED=\"1740907868021\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/src/course_management_system\" />\n    <SUITE FILE_PATH=\"coverage/courseManagementSystem$main.coverage\" NAME=\"main Coverage Results\" MODIFIED=\"1740819144925\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision f5243034224e801f7acd58f67d80ce7b1aab7426)
++++ b/.idea/workspace.xml	(date 1741230547375)
+@@ -4,11 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="e3c2c133-910a-444e-97cc-2fe7a9573081" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/course_management_system/facilitators.py" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/test/course_management_system/test_facilitators.py" afterDir="false" />
+-    </list>
++    <list default="true" id="e3c2c133-910a-444e-97cc-2fe7a9573081" name="Changes" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -49,6 +45,8 @@
+   "keyToString": {
+     "Python tests.Python tests for test_facilitator.MyTestCase.test_that_facilitator_class_returns_correct_name.executor": "Run",
+     "Python tests.Python tests for test_facilitator.MyTestCase.test_that_facilitator_email_and_password_can_save_to_file.executor": "Run",
++    "Python tests.Python tests for test_student.MyTestCase.executor": "Run",
++    "Python tests.Python tests for test_student.MyTestCase.test_that_student_can_register.executor": "Run",
+     "Python.User.executor": "Run",
+     "Python.main.executor": "Run",
+     "Python.uml.executor": "Run",
+@@ -70,7 +68,7 @@
+       <recent name="$PROJECT_DIR$/src" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Python.main">
++  <component name="RunManager" selected="Python tests.Python tests for test_student.MyTestCase">
+     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+       <module name="courseManagementSystem" />
+       <option name="ENV_FILES" value="" />
+@@ -126,8 +124,42 @@
+       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+       <method v="2" />
+     </configuration>
++    <configuration name="Python tests for test_student.MyTestCase" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
++      <module name="courseManagementSystem" />
++      <option name="ENV_FILES" value="" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <option name="SDK_HOME" value="" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/course_management_system" />
++      <option name="IS_MODULE_SDK" value="true" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
++      <option name="_new_additionalArguments" value="&quot;&quot;" />
++      <option name="_new_target" value="&quot;test_student.MyTestCase&quot;" />
++      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
++      <method v="2" />
++    </configuration>
++    <configuration name="Python tests for test_student.MyTestCase.test_that_student_can_register" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
++      <module name="courseManagementSystem" />
++      <option name="ENV_FILES" value="" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <option name="SDK_HOME" value="" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/course_management_system" />
++      <option name="IS_MODULE_SDK" value="true" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
++      <option name="_new_additionalArguments" value="&quot;&quot;" />
++      <option name="_new_target" value="&quot;test_student.MyTestCase.test_that_student_can_register&quot;" />
++      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
++      <method v="2" />
++    </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Python tests.Python tests for test_student.MyTestCase" />
++        <item itemvalue="Python tests.Python tests for test_student.MyTestCase.test_that_student_can_register" />
+         <item itemvalue="Python tests.Python tests for test.course_management_system.test_student.MyTestCase.test_that_facilitator_email_and_password_can_save_to_file" />
+         <item itemvalue="Python tests.Python tests for test.course_management_system.test_student.MyTestCase.test_that_facilitator_class_returns_correct_name" />
+       </list>
+@@ -159,7 +191,7 @@
+     <option name="version" value="3" />
+   </component>
+   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+-    <SUITE FILE_PATH="coverage/courseManagementSystem$.coverage" NAME=" Coverage Results" MODIFIED="1740921075129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/course_management_system" />
++    <SUITE FILE_PATH="coverage/courseManagementSystem$.coverage" NAME=" Coverage Results" MODIFIED="1741228765218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/course_management_system" />
+     <SUITE FILE_PATH="coverage/courseManagementSystem$uml.coverage" NAME="uml Coverage Results" MODIFIED="1740819153131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+     <SUITE FILE_PATH="coverage/courseManagementSystem$User.coverage" NAME="User Coverage Results" MODIFIED="1740907868021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/course_management_system" />
+     <SUITE FILE_PATH="coverage/courseManagementSystem$main.coverage" NAME="main Coverage Results" MODIFIED="1740819144925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
