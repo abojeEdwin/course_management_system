@@ -3,10 +3,10 @@ class Courses:
     def __init__(self):
         self._courses : list[Course] = []
 
-    def add(self, course_title: str, course_code: str, course_facilitator: str) -> None:
-        self._courses.append(Course(course_title, course_code, course_facilitator))
+    def add(self, course_title: str, course_code: str, course_facilitator: str):
+        return self._courses.append(Course(course_title, course_code, course_facilitator))
 
-    def find_course_in_courses_by(self, course_facilitator: str) -> Course:
+    def find_course_in_courses_by(self, course_facilitator):
         for course in self._courses:
             if course.get_course_facilitator() == course_facilitator:
                 return course
@@ -19,4 +19,7 @@ class Courses:
                 self._courses.remove(course)
 
     def view_courses(self):
-        return self._courses.__str__()
+        return self._courses
+
+    def __str__(self):
+        return str(self._courses)
