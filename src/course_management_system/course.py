@@ -1,8 +1,9 @@
-from course_management_system.src.course_management_system.student import Student
-from course_management_system.src.course_management_system.user import User
+from src.course_management_system.student import Student
+from src.course_management_system.user import User
 
 class Course:
     def __init__(self):
+        self.course_code = None
         self.facilitator_name = None
         self.course_title = None
         self.course_unit = None
@@ -57,3 +58,10 @@ class Course:
 
     def get_course_unit(self):
         return self.course_unit
+
+    def set_course_code(self,course_code):
+        self.course_code = course_code
+
+    def set_course_facilitator(self, course_facilitator):
+        self.facilitator_name = course_facilitator
+
