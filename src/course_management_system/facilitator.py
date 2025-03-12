@@ -122,7 +122,7 @@ class Facilitator:
             return score
 
     def create_course(self, course_title, course_code, course_facilitator):
-        course = Course()
+        course = Course(course_title,course_code,course_facilitator)
         course.set_course_title(course_title)
         course.set_course_code(course_code)
         course.set_course_facilitator(course_facilitator)

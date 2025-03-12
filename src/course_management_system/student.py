@@ -98,12 +98,12 @@ class Student:
                 return "Registration successful"
 
 
-    def register_course(self,course_name,email):
+    def register_course(self,course_code,course_name,email):
         from src.course_management_system.course import Course
-        course = Course()
 
+        course = Course(course_name,course_code," ")
         self.validate_reg_email(email)
-        if course_name == course.get_course_title():
+        if course.get_course_title() == course_name:
             self.student_offered_courses.append(course_name)
         else:
             return "Your selected course has not been added "
@@ -123,11 +123,13 @@ class Student:
                             print("Your email already exist")
 
     def view_courses(self,email):
+        student_courses = []
         if not self.validate_email(email):
             return "Please enter a valid email {example@gmail.com}"
         else:
             for courses in self.student_offered_courses:
-                return courses
+                student_courses.append(courses)
+            return " ".join(map(str, student_courses))
 
     def view_course_instructor(self):
         while True:

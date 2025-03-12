@@ -1,4 +1,6 @@
 import unittest
+
+from src.course_management_system.facilitator import Facilitator
 from src.course_management_system.student import Student
 
 
@@ -27,11 +29,15 @@ class MyTestCase(unittest.TestCase):
 
     def test_that_student_can_view_courses_enrolled_for(self):
         student = Student()
+        facilitator = Facilitator()
+        facilitator.register("Mr Franco","franco@gmail.com","Test12t@")
+        facilitator.create_course("Statistics","STA322","Evans")
+        facilitator.create_course("Chemistry","CHEM322","Francis")
         student.register("Edwin", "Aboje", "abojeedwin@gmail.com", "Test123!")
         student.login("abojeedwin@gmail.com", "Test123!")
-        student.register_course("Chemistry", "abojeedwin@gmail.com")
-        student.register_course("Statistics","abojeedwin@gmail.com")
-        self.assertEqual("Chemistry","Statistics",student.view_courses("abojeedwin@gmail.com"))
+        student.register_course("Chem322", "Chemistry","abojeedwin@gmail.com")
+        student.register_course("STA322","Statistics","abojeedwin@gmail.com")
+        self.assertEqual("Chemistry Statistics",student.view_courses("abojeedwin@gmail.com"))
 
 
 

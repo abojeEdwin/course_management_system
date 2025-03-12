@@ -7,21 +7,21 @@ from src.course_management_system.student import Student
 
 class TestFacilitators(TestCase):
     def test_that_facilitators_can_register(self):
-        facilitators = Facilitators("name", "email")
-        self.assertEqual("You've been registered successfully", facilitators.register("name", "email"))
+        facilitator = Facilitator("name", "email"," ")
+        self.assertEqual("You've been registered successfully", facilitator.register("name", "email"))
 
     def test_that_name_and_email_is_validated(self):
-        facilitators = Facilitators("name", "email")
-        facilitators.register("name", "email")
+        facilitator = Facilitator("name", "email"," ")
+        facilitator.register("name", "email"," ")
         with self.assertRaises(TypeError):
-            facilitators.register("", 'email')
+            facilitator.register("", 'email',"")
 
         with self.assertRaises(TypeError):
-            facilitators.register('name', '')
+            facilitator.register('name', '',"")
 
     def test_that_facilitators_can_login(self):
-        facilitators = Facilitators("name", "email")
-        self.assertEqual("You've been logged in", facilitators.log_in("name", "email"))
+        facilitator = Facilitator("name", "email"," ")
+        self.assertEqual("You've been logged in", facilitator.login("name", "email"))
 
     def test_that_facilitators_inputs_is_correct_before_logging_in(self):
         facilitators = Facilitators("name", "email")
