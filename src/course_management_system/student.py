@@ -106,7 +106,7 @@ class Student:
         if course_name == course.get_course_title():
             self.student_offered_courses.append(course_name)
         else:
-            return "Your selected course has not been added "
+            return "Your selected course has not been added"
 
 
 

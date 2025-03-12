@@ -122,10 +122,10 @@ class Facilitator:
             return score
 
     def create_course(self, course_title, course_code, course_facilitator):
-        course = Course()
-        course.set_course_title(course_title)
-        course.set_course_code(course_code)
-        course.set_course_facilitator(course_facilitator)
+        course = Course(course_title, course_code, course_facilitator)
+        # course.set_course_title(course_title)
+        # course.set_course_code(course_code)
+        # course.set_course_facilitator(course_facilitator)
         self.facilitators_courses.append(course)
         self.is_created = True
 
@@ -162,7 +162,10 @@ class Facilitator:
         elif self.is_created is True:
             return True
 
-
-
-
-
+    def assign_grade(self, course_code, score):
+        from src.course_management_system.student import Student
+        student = Student()
+        for course in self.facilitators_courses:
+            if student.get_offered_courses(course_code) == course.get_course_code():
+                course.set_course_grade(score)
+                return course.get_course_grade()
