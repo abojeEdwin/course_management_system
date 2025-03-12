@@ -103,10 +103,9 @@ class Student:
 
         course = Course(course_name,course_code," ")
         self.validate_reg_email(email)
-        if course.get_course_title() == course_name:
-            self.student_offered_courses.append(course_name)
-        else:
-            return "Your selected course has not been added "
+        if course.get_course_code() == course_code:
+            self.student_offered_courses.append(course_code)
+        return "Your selected course has not been added "
 
 
 
@@ -129,7 +128,7 @@ class Student:
         else:
             for courses in self.student_offered_courses:
                 student_courses.append(courses)
-            return " ".join(map(str, student_courses))
+            return ", ".join(student_courses)
 
     def view_course_instructor(self):
         while True:
