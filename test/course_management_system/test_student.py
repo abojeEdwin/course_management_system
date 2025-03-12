@@ -1,6 +1,4 @@
 import unittest
-
-from src.course_management_system.facilitator import Facilitator
 from src.course_management_system.student import Student
 
 
@@ -28,18 +26,12 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual("Your selected course has not been added ",student.register_course("Chemistry","abojeedwin@gmail.com"))
 
     def test_that_student_can_view_courses_enrolled_for(self):
-        student1 = Student()
-        facilitator1 = Facilitator()
-        facilitator1.register("Mr Shibuzo","shibuzo@gmail.com","Test1234@")
-        facilitator1.register("Mr Franco","franco","Ques123@")
-        facilitator1.create_course("Chemistry","CHE322","Mr Shibuzo")
-        facilitator1.create_course("Statistics","STA311","Mr Franco")
-        student1.register("Edwin", "Aboje", "abojeedwin@gmail.com", "Test123!")
-        student1.login("abojeedwin@gmail.com", "Test123!")
-        student1.register_course("Chemistry", "abojeedwin@gmail.com")
-        student1.register_course("Statistics","abojeedwin@gmail.com")
-        self.assertEqual("[Statistics,Chemistry]",student1.view_courses("abojeedwin@gmail.com"))
-
+        student = Student()
+        student.register("Edwin", "Aboje", "abojeedwin@gmail.com", "Test123!")
+        student.login("abojeedwin@gmail.com", "Test123!")
+        student.register_course("Chemistry", "abojeedwin@gmail.com")
+        student.register_course("Statistics","abojeedwin@gmail.com")
+        self.assertEqual("Chemistry","Statistics",student.view_courses("abojeedwin@gmail.com"))
 
 
 
