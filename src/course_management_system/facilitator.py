@@ -10,6 +10,8 @@ class Facilitator:
         self.email_address = None
         self.password = None
         self.facilitators_courses: list[Course] = []
+        self.is_facilitator_registered = False
+        self.is_created = False
 
 
     def set_name(self, name):
@@ -46,6 +48,7 @@ class Facilitator:
             admin.add_facilitator(facilitator)
             self.save_registration_details_to_file(name, email_address, self.hash_facilitator_password(password))
             print('Facilitator successfully registered')
+            self.is_facilitator_registered = True
             return True
 
     def login(self, email_address, password):
@@ -124,6 +127,7 @@ class Facilitator:
         course.set_course_code(course_code)
         course.set_course_facilitator(course_facilitator)
         self.facilitators_courses.append(course)
+        self.is_created = True
 
         from src.course_management_system.admin import Admin
         admin = Admin()
@@ -132,7 +136,7 @@ class Facilitator:
         return course
 
 
-    def view_created_courses(self, course_facilitator):
+    def view_created_courses(self):
         return self.facilitators_courses
 
     def find_course_by_facilitator(self, facilitator_name):
@@ -145,6 +149,20 @@ class Facilitator:
         #     if course.get_course_instructor() == facilitator_name:
         #         courses.append(course)
         # return courses
+
+    def is_registered(self):
+        if self.is_facilitator_registered is False:
+            return False
+        elif self.is_facilitator_registered is True:
+            return True
+
+    def is_course_created(self):
+        if self.is_created is False:
+            return False
+        elif self.is_created is True:
+            return True
+
+
 
 
 
