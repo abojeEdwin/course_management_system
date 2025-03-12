@@ -123,11 +123,13 @@ class Student:
                             print("Your email already exist")
 
     def view_courses(self,email):
+        student_courses = []
         if not self.validate_email(email):
             return "Please enter a valid email {example@gmail.com}"
         else:
             for course_names in self.student_offered_courses:
-                print (course_names)
+                student_courses.append(course_names)
+            return " ".join(map(str, student_courses))
 
     def view_course_instructor(self):
         while True:
