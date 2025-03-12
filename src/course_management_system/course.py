@@ -51,4 +51,3 @@ class Course:
 
     def add_student(self, student):
         self.students.append(student)
-
