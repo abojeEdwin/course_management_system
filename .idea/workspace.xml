@@ -44,29 +44,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for test_courseclass.TestCourse.test_that_course_title_code_facilitator_are_required_to_create_course_correctly.executor": "Run",
-    "Python tests.Python tests for test_courseclass.TestCourse.test_that_instructors_can_view_students_enrolled_in_their_course.executor": "Run",
-    "Python tests.Python tests for test_facilitator.MyTestCase.test_that_facilitator_class_returns_correct_name.executor": "Run",
-    "Python tests.Python tests for test_facilitator.MyTestCase.test_that_facilitator_email_and_password_can_save_to_file.executor": "Run",
-    "Python tests.Python tests in test_courseclass.py.executor": "Run",
-    "Python.User.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.uml.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature/updating-all-created-features",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Dell/OneDrive/Desktop/course_management_system",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_courseclass.TestCourse.test_that_course_title_code_facilitator_are_required_to_create_course_correctly.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_courseclass.TestCourse.test_that_instructors_can_view_students_enrolled_in_their_course.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_facilitator.MyTestCase.test_that_facilitator_class_returns_correct_name.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_facilitator.MyTestCase.test_that_facilitator_email_and_password_can_save_to_file.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_courseclass.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.User.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.uml.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;new__course__branch&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Dell/OneDrive/Desktop/course_management_system&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/test" />
@@ -173,8 +173,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PY-243.22562.220" />
-        <option value="bundled-python-sdk-0fc6c617c4bd-9a18a617cbe4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.22562.220" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PY-243.25659.43" />
+        <option value="bundled-python-sdk-181015f7ab06-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.25659.43" />
       </set>
     </attachedChunks>
   </component>
@@ -189,6 +189,7 @@
       <workItem from="1740816385255" duration="10589000" />
       <workItem from="1740906912573" duration="21840000" />
       <workItem from="1741760665271" duration="1462000" />
+      <workItem from="1741851965600" duration="1216000" />
     </task>
     <servers />
   </component>
