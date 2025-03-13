@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3c2c133-910a-444e-97cc-2fe7a9573081" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/course_management_system/facilitator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/course_management_system/facilitator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,29 +43,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests for test_courseclass.TestCourse.test_that_course_title_code_facilitator_are_required_to_create_course_correctly.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_courseclass.TestCourse.test_that_instructors_can_view_students_enrolled_in_their_course.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_facilitator.MyTestCase.test_that_facilitator_class_returns_correct_name.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_facilitator.MyTestCase.test_that_facilitator_email_and_password_can_save_to_file.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_courseclass.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.User.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.uml.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;new__course__branch&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Dell/OneDrive/Desktop/course_management_system&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for test_courseclass.TestCourse.test_that_course_title_code_facilitator_are_required_to_create_course_correctly.executor": "Run",
+    "Python tests.Python tests for test_courseclass.TestCourse.test_that_instructors_can_view_students_enrolled_in_their_course.executor": "Run",
+    "Python tests.Python tests for test_facilitator.MyTestCase.test_that_facilitator_class_returns_correct_name.executor": "Run",
+    "Python tests.Python tests for test_facilitator.MyTestCase.test_that_facilitator_email_and_password_can_save_to_file.executor": "Run",
+    "Python tests.Python tests in test_courseclass.py.executor": "Run",
+    "Python.User.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.uml.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "#27 on Merging new__course__branch",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Dell/OneDrive/Desktop/course_management_system",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/test" />
