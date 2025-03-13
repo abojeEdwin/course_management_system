@@ -56,7 +56,19 @@ class TestCourse(TestCase):
         student.register("John", "Doe", "jdoe@gmail.com", "passWO1@")
         # print(student.view_available_courses())
 
+    def test_that_grade_is_assigned_to_student_registered_for_course_by_facilitator(self):
+        from src.course_management_system.facilitator import Facilitator
+        facilitator = Facilitator()
+        facilitator.register("Esther Aiyeola", "eaiye@gmail.com", "Pass12@_")
+        self.assertTrue(facilitator.is_registered())
+        course = facilitator.create_course("Introduction to Java", "JAV 101", "Esther Aiyeola")
+        self.assertTrue(facilitator.is_course_created())
 
+        facilitator.login("eaiye@gmail.com", "Pass12@_")
+        from src.course_management_system.student import Student
+        student = Student()
+        print(student.register("Grace", "Olowo", "olowo@gmail.com", "passWO1@"))
+        print(student.login("olowo@gmail.com", "passWO1@"))
 
 
 
