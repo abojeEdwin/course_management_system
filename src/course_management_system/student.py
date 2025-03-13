@@ -100,11 +100,13 @@ class Student:
 
     def register_course(self,course_code,course_name,email):
         from src.course_management_system.course import Course
+        course = Course()
 
-        course = Course(course_name,course_code," ")
         self.validate_reg_email(email)
         if course.get_course_code() == course_code:
-            self.student_offered_courses.append(course_code)
+            course.set_course_code(course_code)
+            course.set_course_title(course_name)
+            self.student_offered_courses.append(course)
         return "Your selected course has not been added "
 
 
@@ -130,19 +132,15 @@ class Student:
                 student_courses.append(courses)
             return ", ".join(student_courses)
 
-    def view_course_instructor(self):
-        while True:
-            course_instructor = input("Enter your course : ")
+    def view_course_instructor(self,course_code):
+
+        for course in self.student_offered_courses:
+             if course.get_course_code() == course_code:
+                return course.get_course_facilitator()
+             return "Facilitator not found"
 
     def view_grade(self,email):
             if not self.validate_email(email):
                 print("Please enter a valid email {example@gmail.com}")
             #for grades in
 
-
-    def get_offered_courses(self,course_name):
-        for courses in self.student_offered_courses:
-            if course_name == courses:
-                return courses
-            else:
-                return False

@@ -37,8 +37,17 @@ class MyTestCase(unittest.TestCase):
         student.login("abojeedwin@gmail.com", "Test123!")
         student.register_course("CHEM322", "Chemistry","abojeedwin@gmail.com")
         student.register_course("STA322","Statistics","abojeedwin@gmail.com")
-        self.assertEqual("ECO299, CHEM322, STA322",student.view_courses("abojeedwin@gmail.com"))
+        self.assertEqual("CHEM322, STA322",student.view_courses("abojeedwin@gmail.com"))
 
+    def test_that_student_can_view_course_facilitator(self):
+        student = Student()
+        facilitator = Facilitator()
+        facilitator.register("Mr Franco", "franco@gmail.com", "Test12t@")
+        facilitator.create_course("Statistics", "STA322", "Evans")
+        student.register("Edwin", "Aboje", "abojeedwin@gmail.com", "Test123!")
+        student.login("abojeedwin@gmail.com", "Test123!")
+        student.register_course("STA322","Statistics","abojeedwin@gmail.com")
+        self.assertEqual("Evans",student.view_course_instructor("Statistics"))
 
 
 

@@ -2,24 +2,27 @@ from src.course_management_system.student import Student
 from src.course_management_system.user import User
 
 class Course:
-    def __init__(self, course_title, course_code, course_facilitator):
+    def __init__(self):
         self.is_created = None
-        self.course_title = course_title
-        self.course_code = course_code
-        self.course_facilitator = course_facilitator
+        self.course_title = None
+        self.course_code = None
+        self.course_facilitator = None
         self.students : list[Student] = []
 
 
     def set_course_title(self, course_title):
         self.course_title = course_title
 
+
     def get_course_title(self):
         return self.course_title
 
     def set_course_code(self, course_code):
         self.course_code = course_code
+
     def get_course_code(self):
         return self.course_code
+
     def set_course_facilitator(self, course_facilitator):
         self.course_facilitator = course_facilitator
 
