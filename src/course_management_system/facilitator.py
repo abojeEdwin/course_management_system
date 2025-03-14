@@ -59,51 +59,47 @@ class Facilitator:
             print("Logged in successfully.")
             return True
 
-    @staticmethod
-    def hash_facilitator_password(password):
-        return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
 
-    @staticmethod
-    def save_registration_details_to_file(name, email_address, hashed_password):
-        with open('facilitator_reg_details.txt', 'a') as reg_details_file:
-            reg_details_file.write(f'{name}:{email_address}:{hashed_password.decode('utf-8')}\n')
+    def hash_facilitator_password(self,password):
+        if isinstance(password, str):
+            password = password.encode("utf-8")
+        hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
+        return hashed_password
 
-        # if name and email_address:
-        #     return "You've been registered successfully"
-        # if name == "":
-        #     raise TypeError("Name cannot be empty")
-        # if email_address == "":
-        #     raise TypeError("Email Address cannot be empty")
 
-    @staticmethod
-    def validate_reg_details(email_address, password):
+    def save_registration_details_to_file(self,name, email_address, password):
+        with open('facilitator_reg_details.txt', 'a') as file:
+            file.write(f'{name}:{email_address}:{self.hash_facilitator_password(password).decode('utf-8')}\n')
+
+
+
+    def validate_reg_details(self,email_address, password):
         with open('facilitator_reg_details.txt', 'r') as reg_details_file:
             for line in reg_details_file:
                 stored_name, stored_email_address, stored_password = line.strip().split(':')
                 if stored_email_address == email_address:
-                    if bcrypt.checkpw(password.encode('utf-8'), stored_password.encode('utf-8')):
-                        return True
-                    else:
-                        return False
+                    return bcrypt.checkpw(password.encode('utf-8'), stored_password.encode('utf-8'))
+                else:
+                    return False
 
-    @staticmethod
-    def validate_facilitator_email(email_address):
+
+    def validate_facilitator_email(self,email_address):
         pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,3}$'
         if re.fullmatch(pattern, email_address):
             return True
         else:
             return False
 
-    @staticmethod
-    def validate_facilitator_password(password):
+
+    def validate_facilitator_password(self,password):
         pattern = r'[A-Za-z1-9_!@]{8}'
         if re.fullmatch(pattern, password):
             return True
         else:
             return False
 
-    @staticmethod
-    def validate_facilitator_name(name):
+
+    def validate_facilitator_name(self,name):
         pattern = r'[A-Za-z]+\s[A-Za-z]+'
         if re.fullmatch(pattern, name):
             return True
@@ -123,10 +119,10 @@ class Facilitator:
             return score
 
     def create_course(self, course_title, course_code, course_facilitator):
-        course = Course(course_title, course_code, course_facilitator)
-        # course.set_course_title(course_title)
-        # course.set_course_code(course_code)
-        # course.set_course_facilitator(course_facilitator)
+        course = Course()
+        course.set_course_title(course_title)
+        course.set_course_code(course_code)
+        course.set_course_facilitator(course_facilitator)
         self.facilitators_courses.append(course)
         self.is_created = True
 
