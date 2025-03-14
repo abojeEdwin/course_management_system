@@ -1,3 +1,4 @@
+from src.course_management_system.facilitator import Facilitator
 from src.course_management_system.student import Student
 from src.course_management_system.course import Course
 import sys
@@ -25,7 +26,12 @@ def main():
                     student.save_to_file(email, password)
 
                 case '2':
-                    pass
+                    name = input("Enter your name :")
+                    email = input ("Enter your email :")
+                    password = input("Enter your password : ")
+                    facilitator = Facilitator()
+                    facilitator.register(name,email,password)
+                    facilitator.save_registration_details_to_file(name,email,password)
 
                 case '3':
                     email = input("Enter your email : ")
@@ -37,7 +43,9 @@ def main():
                 case '4':
                     email = input("Enter your email :")
                     password = input("Enter your password :")
-                    pass
+                    facilitator = Facilitator()
+                    facilitator.login(email,password)
+                    student_menu()
                 case '5':
                     sys.exit(0)
 
@@ -57,7 +65,8 @@ def student_menu():
                 student = Student()
                 course_name = input("Enter your course name : ")
                 email = input("Enter your email : ")
-                student.register_course(course_name, email)
+                course_code = input("Enter your course code")
+                student.register_course(course_code,course_name,email)
                 student.save_course_reg_to_file(email,course_name)
 
             case '2':
@@ -79,12 +88,37 @@ def student_menu():
                 sys.exit(0)
 
 
+def facilitator_menu():
+    facilitator_menu = """
+               1 -> Create Course
+               2 -> View Courses 
+               3 -> Assign Grades
+               4 -> View Course Instructors
+               5 -> Exit
+           """
+    while True:
+        facilitator_choice = input(facilitator_menu)
+        match facilitator_choice:
+            case '1':
+                facilitator = Facilitator()
+                course_title = input("Enter your course title : ")
+                course_code = input("Enter your course code : ")
+                course_facilitator = input("Enter the course facilitator : ")
+                facilitator.create_course(course_title,course_code,course_facilitator)
 
+            case '2':
+                facilitator = Facilitator()
+                facilitator.view_created_courses()
 
+            case '3':
+                facilitator = Facilitator()
+                #facilitator.assign_grade()
 
+            case '4':
+                pass
 
-
-
+            case '5':
+                sys.exit(0)
 
 
 
