@@ -81,9 +81,10 @@ class Facilitator:
             for line in reg_details_file:
                 stored_name, stored_email_address, stored_password = line.strip().split(':')
                 if stored_email_address == email_address:
-                    return bcrypt.checkpw(password.encode('utf-8'), stored_password.encode('utf-8'))
-                else:
-                    return False
+                    if bcrypt.checkpw(password.encode('utf-8'), stored_password.encode('utf-8')):
+                        return True
+                    else:
+                        return False
 
     @staticmethod
     def validate_facilitator_email(email_address):
