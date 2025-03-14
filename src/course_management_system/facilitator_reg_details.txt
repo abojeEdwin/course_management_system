@@ -1,0 +1,4 @@
+Mr Evans:evans@gmail.com:$2b$12$skHIzHHYnM7XUwGuw69u1OXN2wuCj3OFlDxRStYjBbKdiYpnu6KFi
+mr evans:evan@gmail.com:$2b$12$vdx3Pdi1JQzknmiM8y5MueGE706cAiPQ2NSTLghjCItz6NjNsLQqW
+mr franco:franco@gmail.com:$2b$12$fDQVPBXDUgcLqrgksdRY5uFghI5I9ePdE8834OmpXYtTuZM0VHthK
+mr franco:franco@gmail.com:$2b$12$Ua0jeJ71zX6M3wWco7bHpOi26LLeL3fYhRYLNOSR5bhSam6CB3f1e

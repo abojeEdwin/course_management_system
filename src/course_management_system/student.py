@@ -23,12 +23,14 @@ class Student:
         return self.__first_name + " " + self.__last_name
 
     def hash_password(self,password):
-        hashed_password = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
+        if isinstance(password, str):
+            password = password.encode("utf-8")
+        hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
         return hashed_password
 
     def save_to_file(self,email, password):
         with open('user_login_details.txt','a') as file:
-            file.write(f'{email}:{password.decode("utf-8")}\n')
+             file.write(f'{email}:{self.hash_password(password).decode('utf-8')}\n')
 
     def save_course_reg_to_file(self,email,course_name):
         with open('user_reg_details.txt','a') as file:
@@ -95,18 +97,17 @@ class Student:
                 self.set_first_name(first_name)
                 self.set_last_name(last_name)
                 self.list_of_student.append(self.__full_name)
-                return "Registration successful"
+                print (f'{first_name} {last_name} Registration successful')
 
 
     def register_course(self,course_code,course_name,email):
         from src.course_management_system.course import Course
         course = Course()
-
         self.validate_reg_email(email)
         if course.get_course_code() == course_code:
-            course.set_course_code(course_code)
-            course.set_course_title(course_name)
-            self.student_offered_courses.append(course)
+            # course.set_course_code(course_code)
+            # course.set_course_title(course_name)
+            self.student_offered_courses.append(course_code)
         return "Your selected course has not been added "
 
 
@@ -128,12 +129,11 @@ class Student:
         if not self.validate_email(email):
             return "Please enter a valid email {example@gmail.com}"
         else:
-            for courses in self.student_offered_courses:
-                student_courses.append(courses)
+            for course_code in self.student_offered_courses:
+                 student_courses.append(course_code)
             return ", ".join(student_courses)
 
     def view_course_instructor(self,course_code):
-
         for course in self.student_offered_courses:
              if course.get_course_code() == course_code:
                 return course.get_course_facilitator()
@@ -143,4 +143,3 @@ class Student:
             if not self.validate_email(email):
                 print("Please enter a valid email {example@gmail.com}")
             #for grades in
-
